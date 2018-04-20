@@ -75,7 +75,7 @@ func appMain() {
         renderPassDescriptor.colorAttachments[0].texture = drawable!.texture
         renderPassDescriptor.colorAttachments[0].loadAction = .clear
         renderPassDescriptor.colorAttachments[0].clearColor = MTLClearColor(red: 1.0, green: 0.0, blue: 1.0, alpha: 1.0)
-
+        renderPassDescriptor.colorAttachments
         // Create Command Buffer
         let commandBuffer = commandQueue.makeCommandBuffer()
 
@@ -91,7 +91,7 @@ func appMain() {
         commandBuffer?.commit()
     }
 
-    CVDisplayLinkCreateWithActiveCGDisplays(&displayLink)
+    CVDisplayLinkCreateWithActiveCGDisplays(&displayLink) //leaked?
     CVDisplayLinkSetOutputCallback(displayLink!, displayLinkCallback, nil)
     CVDisplayLinkStart(displayLink!)
 

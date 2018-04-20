@@ -1,5 +1,6 @@
 
 import Cocoa
+import SimpleLib
 
 print("Hello, world!")
 
@@ -65,6 +66,7 @@ class AppDel: NSObject, NSApplicationDelegate {
 }
 NSApp.setActivationPolicy(.regular)
 NSApp.delegate = AppDel()
+let f = Foo()
 NSApp.run()
 
 
